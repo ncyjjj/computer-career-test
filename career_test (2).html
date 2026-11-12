@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f7fb">
+<title>计算机就业方向测评</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#172033;--muted:#697386;--line:#e7ebf2;--primary:#5b63e6;--primary2:#858bf5;--soft:#eef0ff;--green:#16866a;--orange:#c87928;--shadow:0 16px 44px rgba(25,35,70,.08)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0%,#eceeff 0,transparent 30%),var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);line-height:1.65}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{max-width:980px;margin:0 auto;padding:28px 20px 60px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}.brand{display:flex;gap:10px;align-items:center;font-weight:750;letter-spacing:.2px}.brand-mark{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,#6069eb,#9a8df7);display:grid;place-items:center;color:white;font-weight:800}.tag{font-size:12px;color:#5d64cb;background:#eff0ff;border:1px solid #dfe1ff;padding:5px 10px;border-radius:99px}
+.hero{background:linear-gradient(120deg,#20294a,#39417c 65%,#6268c8);color:white;border-radius:24px;padding:38px 40px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:280px;height:280px;border:1px solid #ffffff22;border-radius:50%;right:-70px;top:-110px;box-shadow:0 0 0 35px #ffffff08,0 0 0 75px #ffffff06}.eyebrow{font-size:12px;letter-spacing:2px;color:#c8cbff;font-weight:700}.hero h1{font-size:34px;line-height:1.25;margin:12px 0}.hero p{max-width:610px;color:#e1e4ff;margin:0 0 22px}.hero-meta{display:flex;gap:18px;flex-wrap:wrap;color:#d4d7ff;font-size:13px}.hero-meta span:before{content:"✓";margin-right:7px;color:#9ff0d7}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;margin-top:20px;box-shadow:0 8px 28px rgba(25,35,70,.035)}.intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.intro-item{background:#f8f9fd;border:1px solid var(--line);border-radius:14px;padding:15px}.intro-item b{display:block;font-size:14px;margin-bottom:3px}.intro-item small{color:var(--muted);font-size:12px}.btn{border:0;border-radius:12px;padding:12px 20px;font-weight:700;transition:.18s}.btn-primary{background:var(--primary);color:#fff;box-shadow:0 7px 16px #5b63e633}.btn-primary:hover{background:#4c54d2;transform:translateY(-1px)}.btn-light{background:#f0f2f8;color:#394158}.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}.start-row{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:24px}.note{font-size:12px;color:var(--muted)}
+.hidden{display:none!important}.progress-wrap{margin-bottom:22px}.progress-top{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-bottom:8px}.progress{height:7px;background:#edf0f6;border-radius:99px;overflow:hidden}.progress>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6069eb,#9b8df5);border-radius:99px;transition:width .25s}
+.step-kicker{font-size:12px;color:var(--primary);font-weight:800;letter-spacing:1px}.step-title{font-size:24px;margin:5px 0 4px}.step-desc{color:var(--muted);font-size:14px;margin:0 0 22px}.field{margin:20px 0}.field label.q{font-weight:700;display:block;margin-bottom:10px}.subhint{font-size:12px;color:var(--muted);font-weight:400;margin-left:5px}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.option{border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;align-items:flex-start;gap:10px;cursor:pointer;transition:.15s;background:#fff}.option:hover{border-color:#b9bef8;background:#fafaff}.option.selected{border-color:var(--primary);background:#f2f3ff;box-shadow:inset 0 0 0 1px var(--primary)}.option input{accent-color:var(--primary);margin-top:5px}.option strong{display:block;font-size:14px}.option small{display:block;color:var(--muted);font-size:12px;margin-top:2px}.text-input{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px 13px;outline:none;background:white}.text-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px #5b63e61a}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}.nav-row{display:flex;justify-content:space-between;margin-top:28px;gap:12px}
+.result-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.result-head h2{font-size:27px;margin:4px 0}.result-head p{color:var(--muted);margin:0}.result-actions{display:flex;gap:8px;flex-wrap:wrap}.result-card{background:linear-gradient(120deg,#f2f3ff,#faf9ff);border:1px solid #e2e3ff;border-radius:17px;padding:22px;margin:22px 0}.result-card h3{margin:0 0 7px}.result-card p{margin:0;color:#4e5670}.rank-list{display:grid;gap:12px;margin-top:16px}.rank{display:grid;grid-template-columns:145px 1fr 48px;gap:12px;align-items:center}.rank-name{font-weight:700;font-size:14px}.bar{height:10px;border-radius:99px;background:#edf0f6;overflow:hidden}.bar i{height:100%;display:block;background:linear-gradient(90deg,#626bea,#a08ff5);border-radius:99px}.score{font-weight:800;color:var(--primary);text-align:right;font-variant-numeric:tabular-nums}.section-title{font-size:18px;margin:26px 0 12px}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.role-card{border:1px solid var(--line);border-radius:15px;padding:17px;background:#fff}.role-top{display:flex;justify-content:space-between;gap:10px;align-items:center}.role-card h4{margin:0;font-size:16px}.pill{font-size:11px;padding:3px 8px;border-radius:99px;background:#eff0ff;color:#555dcc;white-space:nowrap}.role-card p{font-size:13px;color:var(--muted);margin:10px 0}.role-card ul{margin:0;padding-left:18px;font-size:13px;color:#465067}.role-card li{margin:4px 0}.columns{display:grid;grid-template-columns:1fr 1fr;gap:14px}.info-box{background:#fafbfe;border:1px solid var(--line);border-radius:14px;padding:17px}.info-box h4{margin:0 0 9px}.info-box ul{padding-left:18px;margin:0;color:#515b70;font-size:13px}.info-box li{margin:6px 0}.roadmap{counter-reset:item;display:grid;gap:10px}.roadmap-item{position:relative;padding:13px 14px 13px 48px;border:1px solid var(--line);border-radius:13px}.roadmap-item:before{counter-increment:item;content:counter(item);position:absolute;left:14px;top:13px;width:23px;height:23px;border-radius:8px;background:var(--soft);color:var(--primary);font-weight:800;font-size:12px;display:grid;place-items:center}.roadmap-item b{display:block;font-size:14px}.roadmap-item span{font-size:13px;color:var(--muted)}.disclaimer{margin-top:22px;padding:14px 16px;border-radius:12px;background:#fff9ef;border:1px solid #f5e5c9;color:#80613a;font-size:12px}
+footer{text-align:center;color:#9aa2b2;font-size:12px;margin-top:25px}
+@media(max-width:650px){.shell{padding:16px 13px 40px}.hero{padding:28px 23px;border-radius:19px}.hero h1{font-size:28px}.panel{padding:20px 16px}.intro-grid{grid-template-columns:1fr}.options,.cards,.columns,.two-col{grid-template-columns:1fr}.result-head{display:block}.result-actions{margin-top:15px}.rank{grid-template-columns:105px 1fr 38px;gap:8px}.rank-name{font-size:12px}.start-row{align-items:flex-start;flex-direction:column}.top{margin-bottom:15px}}
+@media print{body{background:white}.shell{max-width:none;padding:0}.top,.hero,.progress-wrap,.nav-row,.result-actions,footer{display:none!important}.panel{border:0;box-shadow:none;padding:0;margin:0}.result-card,.role-card,.info-box{break-inside:avoid}.disclaimer{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="top"><div class="brand"><div class="brand-mark">职</div><span>计算机就业方向测评</span></div><span class="tag">CAREER MATCH</span></div>
+  <section class="hero" id="hero">
+    <div class="eyebrow">CAREER DIRECTION ASSESSMENT</div>
+    <h1>找到更适合你的<br>计算机求职方向</h1>
+    <p>结合院校背景、技术栈、项目深度、实习质量、基础能力和求职偏好，分析岗位匹配度，并生成更具体的求职提升建议。</p>
+    <div class="hero-meta"><span>约 8–10 分钟完成</span><span>教育与能力多维评估</span><span>生成个人测评报告</span></div>
+  </section>
+  <section class="panel" id="welcome">
+    <h2 style="margin:0 0 6px;font-size:21px">开始测评前</h2>
+    <p style="color:var(--muted);margin:0">请尽量根据真实情况作答。没有相关经验也可以选择“暂无”，系统会据此给出更合理的入门建议。</p>
+    <div class="intro-grid">
+      <div class="intro-item"><b>01 · 背景画像</b><small>学历、院校层次、专业与毕业时间</small></div>
+      <div class="intro-item"><b>02 · 能力评估</b><small>技术栈、工程能力、项目深度与实习质量</small></div>
+      <div class="intro-item"><b>03 · 偏好分析</b><small>工作偏好、求职限制、面试准备与目标</small></div>
+    </div>
+    <div class="start-row"><span class="note">测评结果仅用于职业方向参考，不代表录用概率。</span><button class="btn btn-primary" id="startBtn">开始测评 →</button></div>
+  </section>
+
+  <section class="panel hidden" id="quiz">
+    <div class="progress-wrap"><div class="progress-top"><span id="stepLabel">第 1 / 6 部分</span><span id="percent">17%</span></div><div class="progress"><i id="progressBar"></i></div></div>
+    <div id="stepContent"></div>
+    <div class="nav-row"><button class="btn btn-light" id="prevBtn">上一步</button><button class="btn btn-primary" id="nextBtn">下一步 →</button></div>
+  </section>
+
+  <section class="panel hidden" id="result">
+    <div id="report"></div>
+  </section>
+  <footer>计算机就业方向测评 · 结果由本地规则模型生成</footer>
+</div>
+<script>
+const steps = [
+ {title:"基本背景",desc:"先了解你的教育背景与求职阶段。",fields:[
+  {id:"degree",q:"你的最高学历 / 当前学历？",type:"single",opts:[["本科","本科"],["硕士","硕士研究生"],["博士","博士研究生"],["专科","专科 / 高职"]] },
+  {id:"school",q:"你的最高学历所在院校属于哪一类？",hint:"国内院校按 985、211、一本、二本、其他选择；海外院校按 QS 世界大学排名选择。",type:"single",opts:[["985","国内 985 高校"],["211","国内 211 高校（非 985）"],["first","国内一本"],["second","国内二本"],["other","国内其他（专科、高职、民办等）"],["qs100","海外院校：QS 世界排名 100 名以内"],["qs300","海外院校：QS 世界排名 101–300 名"],["qs_other","海外院校：QS 世界排名 300 名以外 / 未上榜"]] },
+  {id:"schoolName",q:"学校名称（选填）",type:"text",placeholder:"可填写学校名称；不会联网核验，也不会影响岗位能力评分"},
+  {id:"grad",q:"你的毕业时间？",type:"single",opts:[["2027","2027 届"],["2028","2028 届"],["2026","2026 届及以前"],["2029+","2029 届及以后"]] },
+  {id:"major",q:"你的专业方向？",type:"single",opts:[["计算机","计算机科学与技术 / 软件工程"],["数据","数据科学 / 大数据 / 人工智能"],["电子","电子信息 / 通信 / 自动化"],["其他","其他专业"]] }
+ ]},
+ {title:"技术能力",desc:"选择你实际接触过、能够使用或正在学习的技术。",fields:[
+  {id:"languages",q:"你掌握或接触过哪些编程语言？",type:"multi",opts:[["Python","Python"],["Java","Java"],["C++","C / C++"],["JavaScript","JavaScript / TypeScript"],["Go","Go"],["SQL","SQL"],["other","其他 / 暂无"]]},
+  {id:"backend",q:"你对后端开发相关技术的熟悉程度？",type:"single",opts:[["strong","能独立完成接口、数据库等开发"],["medium","做过课程或项目，能完成基础功能"],["basic","了解概念，正在学习"],["none","基本没有接触"]] },
+  {id:"ai",q:"你对 AI / 大模型相关技术的接触程度？",type:"single",opts:[["strong","做过 RAG、Agent 或模型应用项目"],["medium","使用过模型 API，做过简单应用"],["basic","了解基本概念，正在学习"],["none","基本没有接触"]] },
+  {id:"data",q:"你对数据处理、分析或机器学习的熟悉程度？",type:"single",opts:[["strong","能独立完成数据分析 / 建模任务"],["medium","使用过 Pandas、SQL 或常见算法库"],["basic","了解基础知识"],["none","基本没有接触"]] },
+  {id:"testing",q:"你对软件测试与质量保障的接触程度？",type:"single",opts:[["strong","做过自动化测试、接口测试或性能测试"],["medium","做过功能测试或编写测试用例"],["basic","了解测试流程和基本方法"],["none","基本没有接触"]] },
+  {id:"frameworks",q:"你实际使用过哪些框架或工程工具？",type:"multi",opts:[["spring","Spring Boot / Spring"],["pyweb","FastAPI / Django / Flask"],["frontend","Vue / React"],["llm","LangChain / LlamaIndex / 模型 API"],["torch","PyTorch / TensorFlow"],["middleware","Redis / Kafka / Elasticsearch"],["devops","Linux / Docker / Kubernetes / CI"],["none","以上都没有系统使用过"]]},
+  {id:"database",q:"你对数据库与数据存储的掌握程度？",type:"single",opts:[["strong","熟悉 SQL、索引、事务，并用过 Redis 等组件"],["medium","能完成常见 SQL 查询和基础数据库操作"],["basic","了解基本概念，实践较少"],["none","基本没有接触"]]},
+  {id:"algorithmLevel",q:"你的算法与编程题训练情况？",type:"single",opts:[["high","能独立解决常见中等难度题目"],["mid","掌握常见数据结构和基础算法"],["low","只会基础题，复杂题需要提示"],["none","基本没有系统练习"]]},
+  {id:"english",q:"你的英语阅读能力如何？",type:"single",opts:[["good","能较顺畅阅读英文技术文档和论文"],["medium","借助工具可以阅读技术文档"],["basic","主要依赖中文资料"],["weak","英文资料阅读比较困难"]]}
+ ]},
+ {title:"项目与实践",desc:"项目经历是判断岗位适配度的重要依据，请按实际情况选择。",fields:[
+  {id:"projects",q:"你有多少段可以在简历中展开讲解的项目经历？",type:"single",opts:[["0","暂无完整项目"],["1","1 个"],["2","2–3 个"],["3","3 个及以上"]] },
+  {id:"intern",q:"你有相关实习或工作经历吗？",type:"single",opts:[["none","暂无"],["short","有，累计不足 3 个月"],["mid","有，累计 3–6 个月"],["long","有，累计 6 个月及以上"]] },
+  {id:"projecttype",q:"你做过哪些类型的项目？",type:"multi",opts:[["web","网站 / 管理系统 / 后端服务"],["aiapp","大模型应用 / RAG / Agent"],["algorithm","算法 / 机器学习 / 深度学习"],["data","数据分析 / 数据平台 / ETL"],["test","自动化测试 / 性能测试工具"],["embedded","嵌入式 / 物联网 / 硬件相关"],["none","暂无或课程小作业为主"]] },
+  {id:"ownership",q:"你在项目中通常承担什么角色？",type:"single",opts:[["independent","能独立负责模块并解释设计取舍"],["core","参与核心功能开发，理解整体流程"],["assist","主要按要求完成局部任务"],["learning","以跟着教程复现为主"]] },
+  {id:"projectDepth",q:"你最有代表性的项目，完成到了什么程度？",type:"single",opts:[["production","真实业务使用 / 已上线运行"],["deploy","独立部署，可通过链接或演示展示"],["complete","核心功能完整，有测试和文档"],["demo","主要完成核心功能或课程演示"],["tutorial","以跟随教程复现为主"]]},
+  {id:"projectEvidence",q:"你是否能清楚说明项目中的个人贡献？",type:"single",opts:[["clear","能说明架构设计、关键代码、难点和结果"],["some","能说明主要模块和技术实现"],["weak","项目做过，但细节和原理讲得不够清楚"],["none","目前还没有可展开讲解的项目"]]},
+  {id:"internType",q:"你的实习 / 工作经历主要涉及哪些内容？",type:"multi",opts:[["dev","业务开发 / 后端 / 前端"],["ai","AI 应用 / 算法 / 数据相关"],["test","功能测试 / 自动化测试 / 测试开发"],["ops","运维 / 部署 / 系统支持"],["data","数据处理 / 数据分析"],["other","其他岗位或暂无实习"]]}
+ ]},
+ {title:"兴趣与工作偏好",desc:"能力可以培养，长期兴趣和工作方式同样重要。",fields:[
+  {id:"interest",q:"你更喜欢哪类工作内容？",type:"single",opts:[["build","设计和开发功能，让系统真正运行起来"],["solve","研究算法、模型和复杂技术问题"],["analyze","处理数据，从数据中发现规律"],["quality","发现问题、验证质量、提升稳定性"],["communicate","理解业务需求，协调资源推动落地"]] },
+  {id:"style",q:"你更喜欢哪种工作方式？",type:"single",opts:[["code","长时间专注编码和技术实现"],["research","持续学习、研究和实验"],["detail","关注细节、流程和质量"],["business","与业务、产品和团队频繁沟通"]] },
+  {id:"challenge",q:"面对复杂问题时，你更愿意？",type:"single",opts:[["debug","定位原因，逐步调试解决"],["explore","查资料、做实验，尝试新方案"],["data","收集数据，用分析结果判断"],["coordinate","拆解任务，沟通协作推进"]] },
+  {id:"pressure",q:"你对工作节奏的偏好？",type:"single",opts:[["stable","更看重稳定和可持续节奏"],["balanced","能接受阶段性加班，希望整体平衡"],["fast","愿意接受较快节奏换取成长机会"],["flexible","更看重工作内容和自主性"]] },
+  {id:"codingRatio",q:"你希望日常工作中编码占多大比例？",type:"single",opts:[["mostly","70% 以上，主要做技术开发"],["half","约一半，开发与沟通协作并重"],["little","少量编码，更偏测试、分析或业务协作"],["none","不希望以写代码为主要工作"]]},
+  {id:"teamPreference",q:"你更适应哪种团队与工作环境？",type:"single",opts:[["structured","流程清晰、分工明确的团队"],["fastteam","节奏较快、职责灵活的小团队"],["researchteam","技术氛围浓、重视研究和探索的团队"],["independent","相对独立，能自主安排任务"]]}
+ ]},
+ {title:"求职目标",desc:"结合你的现实目标，调整岗位推荐的优先级。",fields:[
+  {id:"city",q:"你倾向在哪类城市求职？",type:"single",opts:[["tier1","北上广深 / 杭州等一线及新一线"],["provincial","省会及强二线城市"],["hometown","家乡或周边城市优先"],["any","城市不限，机会优先"]] },
+  {id:"salary",q:"你对第一份工作的薪资期望？",type:"single",opts:[["high","优先考虑较高薪资"],["mid","希望薪资与成长空间平衡"],["stable","薪资适中，稳定性更重要"],["open","暂时没有明确要求"]] },
+  {id:"company",q:"你更倾向哪类企业？",type:"single",opts:[["internet","互联网 / 软件 / AI 企业"],["state","国企 / 央企 / 事业单位相关岗位"],["manufacture","制造业数字化 / 企业 IT"],["any","不限定企业类型"]] },
+  {id:"priority",q:"你目前最优先解决的问题？",type:"single",opts:[["job","尽快拿到合适的 offer"],["skill","补齐技术短板，提高竞争力"],["direction","确定长期发展方向"],["internship","寻找实习，积累项目经验"]] },
+  {id:"mobility",q:"你对工作地点的接受程度？",type:"single",opts:[["wide","可以跨省 / 跨城市，机会优先"],["region","接受周边省市或省会城市"],["local","基本只考虑本地及周边"],["remote","优先考虑远程 / 灵活办公"]]},
+  {id:"companySize",q:"你更倾向哪种企业规模？",type:"single",opts:[["large","大型互联网 / 大型科技企业"],["medium","中型软件公司 / 成长型企业"],["small","小团队 / 初创公司，重视成长空间"],["stateowned","国企 / 央企 / 事业单位"],["unlimited","不限定，岗位内容和发展更重要"]]},
+  {id:"jobStage",q:"你目前处于哪个求职阶段？",type:"single",opts:[["explore","还在了解方向，暂未正式投递"],["prepare","正在准备简历和面试"],["apply","已经开始投递，等待面试反馈"],["interview","正在参加笔试 / 面试"],["offer","已有 offer，希望比较选择"]]}
+ ]},
+ {title:"自我评估",desc:"最后确认你的基础能力与求职准备程度。",fields:[
+  {id:"coding",q:"你目前独立编写代码的能力？",type:"single",opts:[["high","能独立完成中等复杂度功能并调试"],["mid","能完成常见功能，需要查资料辅助"],["low","基础语法可以，复杂任务较吃力"],["start","刚开始学习编程"]] },
+  {id:"cs",q:"数据结构、算法、计算机网络、操作系统等基础？",type:"single",opts:[["good","基础较扎实，能应对常见面试题"],["average","掌握部分知识，需要系统复习"],["weak","基础较薄弱"],["unknown","还没有系统评估"]] },
+  {id:"resume",q:"你的简历和面试准备情况？",type:"single",opts:[["ready","简历完善，已进行多次面试"],["some","有简历，正在准备面试"],["draft","有经历但不会提炼，简历待完善"],["none","还没有开始准备"]] },
+  {id:"interview",q:"你目前的面试表现更接近哪种情况？",type:"single",opts:[["pass","能较完整回答基础题和项目追问"],["basic","基础题还可以，项目深挖容易卡住"],["nervous","知识点会一些，但表达和临场发挥不足"],["noexp","还没有参加过正式面试"]]},
+  {id:"leetcode",q:"你对常见算法题的熟悉程度？",type:"single",opts:[["many","刷过 100 题以上，常见题型比较熟悉"],["some","刷过 30–100 题"],["few","刷过少量题目"],["zero","基本没有刷过"]]},
+  {id:"extra",q:"还有什么想补充的？（选填）",type:"text",placeholder:"例如：目标岗位、具体技术栈、项目成果、期望城市、求职限制或目前最困惑的问题……"}
+ ]}
+];
+const answers={};let current=0;
+const $=id=>document.getElementById(id);
+function renderStep(){
+ const s=steps[current];$("stepLabel").textContent=`第 ${current+1} / ${steps.length} 部分 · ${s.title}`;$("percent").textContent=Math.round((current+1)/steps.length*100)+"%";$("progressBar").style.width=((current+1)/steps.length*100)+"%";
+ let html=`<div class="step-kicker">SECTION 0${current+1}</div><h2 class="step-title">${s.title}</h2><p class="step-desc">${s.desc}</p>`;
+ s.fields.forEach(f=>{
+  html+=`<div class="field"><label class="q">${f.q}${f.type==="multi"?'<span class="subhint">可多选</span>':''}</label>${f.hint?`<div class="subhint" style="display:block;margin:0 0 9px">${f.hint}</div>`:''}`;
+  if(f.type==="text"){html+=`<textarea class="text-input" id="${f.id}" rows="3" placeholder="${f.placeholder||''}">${answers[f.id]||''}</textarea>`}
+  else {html+='<div class="options">';f.opts.forEach(([v,t])=>{let selected=f.type==="multi"?(answers[f.id]||[]).includes(v):answers[f.id]===v;html+=`<label class="option ${selected?'selected':''}"><input type="${f.type==="multi"?'checkbox':'radio'}" name="${f.id}" value="${v}" ${selected?'checked':''}><span><strong>${t}</strong></span></label>`});html+='</div>'}
+  html+='</div>';
+ });
+ $("stepContent").innerHTML=html;
+ $("stepContent").querySelectorAll(".option input").forEach(inp=>inp.addEventListener("change",()=>{const f=s.fields.find(x=>x.id===inp.name);if(f.type==="multi"){let arr=answers[f.id]||[];if(inp.checked&&!arr.includes(inp.value))arr.push(inp.value);if(!inp.checked)arr=arr.filter(x=>x!==inp.value);answers[f.id]=arr}else answers[f.id]=inp.value;renderStepKeepScroll()}));
+ $("stepContent").querySelectorAll("textarea").forEach(el=>el.addEventListener("input",()=>answers[el.id]=el.value));
+ $("prevBtn").disabled=current===0;$("nextBtn").textContent=current===steps.length-1?"生成测评报告 →":"下一步 →";
+}
+function renderStepKeepScroll(){const y=window.scrollY;renderStep();window.scrollTo(0,y)}
+function validStep(){const missing=steps[current].fields.filter(f=>f.type!=="text"&&(!answers[f.id]||(Array.isArray(answers[f.id])&&!answers[f.id].length)));if(missing.length){alert("请先完成本部分必答题："+missing[0].q);return false}return true}
+$("startBtn").onclick=()=>{$("welcome").classList.add("hidden");$("quiz").classList.remove("hidden");current=0;renderStep();window.scrollTo({top:0,behavior:"smooth"})};
+$("prevBtn").onclick=()=>{if(current>0){current--;renderStep();window.scrollTo({top:0,behavior:"smooth"})}};
+$("nextBtn").onclick=()=>{if(!validStep())return;if(current<steps.length-1){current++;renderStep();window.scrollTo({top:0,behavior:"smooth"})}else showReport()};
+
+const roles=[
+ {id:"java",name:"Java 后端开发",desc:"围绕业务系统、接口服务、数据库与分布式组件进行开发。",need:"Java、Spring Boot、MySQL、Redis、计算机基础、项目设计",fit:"适合喜欢构建系统、解决工程问题，并愿意持续打磨编码能力的人。",skills:["Java 核心语法与集合、多线程","Spring Boot、MyBatis、REST API","MySQL 索引事务、Redis 常见场景","项目部署、日志排查与基础 Linux"]},
+ {id:"python",name:"Python 后端开发",desc:"使用 Python 构建 Web 服务、数据接口和自动化业务系统。",need:"Python、FastAPI/Django、SQL、Redis、Linux、接口设计",fit:"适合 Python 基础较好，喜欢快速实现功能和服务端开发的人。",skills:["FastAPI 或 Django 项目实战","MySQL 索引、事务与 SQL 优化","Redis、异步任务与接口性能","Docker、Linux 和服务部署"]},
+ {id:"frontend",name:"前端开发",desc:"负责 Web 页面、交互体验、前端工程化与接口联调。",need:"HTML/CSS/JavaScript、TypeScript、Vue/React、工程化",fit:"适合对页面交互、视觉呈现和用户体验有兴趣的人。",skills:["JavaScript 与 TypeScript","Vue3 或 React 及状态管理","浏览器机制、网络请求与性能优化","组件封装、工程化和项目部署"]},
+ {id:"ai",name:"AI 应用开发",desc:"将大模型能力整合进业务系统，完成知识库问答、Agent 与应用服务。",need:"Python、后端开发、LLM API、RAG、向量检索、评估",fit:"适合既喜欢软件工程，又愿意探索大模型应用落地的人。",skills:["Python 后端与 API 服务能力","RAG：切分、召回、重排和评估","工具调用、Agent 工作流与异常处理","模型效果评估、成本与延迟优化"]},
+ {id:"algorithm",name:"算法工程师",desc:"围绕机器学习、深度学习或推荐/搜索算法开展建模、实验和优化。",need:"数学基础、Python、机器学习、深度学习、论文与实验",fit:"适合数学基础较强、喜欢研究问题并能长期投入实验的人。",skills:["线性代数、概率统计与优化基础","机器学习和深度学习核心方法","PyTorch 实验复现与模型调优","论文阅读、实验设计和结果分析"]},
+ {id:"testdev",name:"测试开发",desc:"通过代码、自动化平台和质量工程提升软件交付质量。",need:"Python/Java、接口自动化、测试框架、数据库、CI/CD",fit:"适合喜欢分析系统行为、定位问题，也愿意编写工具和自动化代码的人。",skills:["Python/Java 测试脚本能力","接口自动化与常用测试框架","Linux、SQL、日志与问题定位","性能测试、持续集成和质量体系"]},
+ {id:"testing",name:"软件测试",desc:"通过测试用例、功能验证和缺陷分析保障产品质量。",need:"测试理论、用例设计、接口测试、SQL、缺陷管理",fit:"适合细致、有耐心，善于从用户视角发现问题的人。",skills:["测试流程、用例设计与缺陷管理","接口测试工具与 HTTP 基础","SQL 查询和 Linux 常用命令","逐步学习自动化测试与性能测试"]},
+ {id:"data",name:"数据分析",desc:"通过 SQL、统计分析和可视化支持业务判断与决策。",need:"SQL、Python、统计学、Excel/BI、业务理解",fit:"适合喜欢分析数据、解释现象并将结论转化为建议的人。",skills:["复杂 SQL 与数据处理","Python Pandas、数据清洗","统计分析、指标体系与实验分析","Tableau/Power BI 等可视化工具"]},
+ {id:"dataeng",name:"数据开发",desc:"建设数据采集、加工、存储与调度链路，支撑数据平台和分析应用。",need:"SQL、Python/Java、数据库、数据仓库、ETL、调度",fit:"适合喜欢数据系统、工程流程和稳定数据链路的人。",skills:["SQL、数据建模与数仓分层","Python/Java 数据处理","ETL、任务调度与数据质量","熟悉 Spark、Flink 等大数据组件"]},
+ {id:"ops",name:"运维开发 / SRE",desc:"通过自动化、平台化和监控体系保障系统稳定运行。",need:"Linux、Shell/Python、网络、Docker、Kubernetes、监控",fit:"适合喜欢系统底层、排障和自动化建设的人。",skills:["Linux、网络与 Shell 基础","Python 自动化和工具开发","Docker、Kubernetes 基础","监控告警、日志分析与故障复盘"]},
+ {id:"embedded",name:"嵌入式开发",desc:"面向设备、终端和硬件平台进行底层软件开发与调试。",need:"C/C++、操作系统、计算机组成、通信协议、硬件调试",fit:"适合对软硬件结合、底层原理和设备开发感兴趣的人。",skills:["C/C++、指针、内存与数据结构","Linux 驱动或 MCU 开发基础","常见通信协议与调试工具","操作系统、编译链接和性能分析"]},
+ {id:"pm",name:"技术产品经理",desc:"理解用户和业务需求，协调研发团队推动技术产品落地。",need:"需求分析、产品设计、沟通协作、数据意识、技术理解",fit:"适合擅长沟通、结构化思考和需求拆解，不以持续编码为主要工作的人。",skills:["需求调研、用户场景和流程梳理","PRD、原型与验收标准","数据分析和项目管理","建立技术理解与跨团队沟通能力"]}
+];
+const level={strong:1,medium:.72,basic:.42,none:0};
+function scoreRoles(){
+ const a=answers,langs=a.languages||[],types=a.projecttype||[];let scores={};
+ const has=(x)=>langs.includes(x),pt=(x)=>types.includes(x);
+ const coding={high:1,mid:.72,low:.38,start:.1}[a.coding]||.2;
+ const cs={good:1,average:.65,weak:.3,unknown:.4}[a.cs]||.4;
+ const proj={0:0,1:.35,2:.7,3:1}[a.projects]||0;
+ const intern={none:0,short:.35,mid:.7,long:1}[a.intern]||0;
+ const own={independent:1,core:.75,assist:.4,learning:.2}[a.ownership]||.3;
+ const interest=a.interest,style=a.style,challenge=a.challenge;
+ const weights={
+ java:[has("Java")?.27:0,level[a.backend]*.22,pt("web")?.15:0,(a.frameworks||[]).includes("spring")?.08:0,(a.database==="strong"?.06:a.database==="medium"?.03:0),proj*.1,coding*.1,cs*.08,own*.08,a.projectEvidence==="clear"?.04:0],
+ python:[has("Python")?.24:0,level[a.backend]*.2,pt("web")?.12:0,(a.frameworks||[]).includes("pyweb")?.08:0,(a.database==="strong"?.05:a.database==="medium"?.025:0),proj*.1,coding*.1,cs*.06,own*.08,interest==="build"?.1:0,a.projectEvidence==="clear"?.04:0],
+ frontend:[has("JavaScript")?.3:0,pt("web")?.15:0,(a.frameworks||[]).includes("frontend")?.1:0,coding*.15,proj*.1,own*.08,interest==="build"?.12:0,style==="code"?.1:0,a.projectEvidence==="clear"?.04:0],
+ ai:[has("Python")?.16:0,level[a.ai]*.25,pt("aiapp")?.2:0,pt("web")?.08:0,(a.frameworks||[]).includes("llm")?.08:0,proj*.1,own*.08,interest==="explore"?.07:0,interest==="build"?.06:0,a.projectEvidence==="clear"?.04:0],
+ algorithm:[has("Python")?.12:0,level[a.data]*.18,pt("algorithm")?.22:0,(a.frameworks||[]).includes("torch")?.1:0,cs*.16,proj*.08,interest==="solve"?.12:0,style==="research"?.12:0,a.algorithmLevel==="high"?.06:a.algorithmLevel==="mid"?.03:0],
+ testdev:[has("Python")?.13:0,has("Java")?.08:0,level[a.testing]*.2,pt("test")?.18:0,(a.frameworks||[]).includes("devops")?.05:0,proj*.1,coding*.12,challenge==="debug"?.1:0,interest==="quality"?.09:0],
+ testing:[level[a.testing]*.22,pt("test")?.16:0,proj*.1,challenge==="debug"?.1:0,style==="detail"?.14:0,interest==="quality"?.16:0,own*.06,intern*.06],
+ data:[has("SQL")?.18:0,has("Python")?.14:0,level[a.data]*.2,pt("data")?.18:0,interest==="analyze"?.14:0,challenge==="data"?.08:0,proj*.08],
+ dataeng:[has("SQL")?.2:0,has("Python")?.1:0,has("Java")?.08:0,pt("data")?.16:0,level[a.backend]*.12,(a.frameworks||[]).includes("middleware")?.07:0,(a.database==="strong"?.06:a.database==="medium"?.03:0),proj*.12,coding*.1,own*.12],
+ ops:[has("Python")?.12:0,pt("web")?.06:0,level[a.backend]*.08,(a.frameworks||[]).includes("devops")?.1:0,challenge==="debug"?.16:0,style==="detail"?.1:0,interest==="build"?.08:0,cs*.08,proj*.08],
+ embedded:[has("C++")?.28:0,has("C")?.2:0,cs*.15,pt("embedded")?.2:0,interest==="solve"?.08:0,style==="research"?.05:0,coding*.04],
+ pm:[interest==="communicate"?.25:0,style==="business"?.2:0,challenge==="coordinate"?.16:0,own*.12,proj*.08,intern*.08,a.company==="any"?.04:0,a.degree==="硕士"?.04:0]
+ };
+ roles.forEach(r=>{let raw=(weights[r.id]||[]).reduce((s,x)=>s+x,0);let bonus=0;
+  if(a.priority==="job"&&["python","java","testing","testdev"].includes(r.id))bonus+=.025;
+  if(a.company==="state"&&["dataeng","ops","testing","java"].includes(r.id))bonus+=.025;
+  if(a.salary==="high"&&["ai","algorithm","java"].includes(r.id))bonus+=.02;
+  if(a.city==="hometown"&&["java","python","testing","ops"].includes(r.id))bonus+=.015;
+  scores[r.id]=Math.max(30,Math.min(96,Math.round(35+raw*58+bonus*100)));
+ });
+ return roles.map(r=>({...r,score:scores[r.id]})).sort((x,y)=>y.score-x.score);
+}
+function showReport(){
+ const ranked=scoreRoles(),top=ranked.slice(0,5),best=top[0],a=answers;
+ const levelText={high:"较好",mid:"具备基础",low:"需要加强",start:"处于入门阶段"};
+ const strengths=[];if(a.projects==="2"||a.projects==="3")strengths.push("具备一定项目积累，可以进一步提炼个人负责模块与技术难点");if(a.intern!=="none")strengths.push("有实习或工作实践经历，建议突出真实业务场景和交付结果");if(a.coding==="high")strengths.push("具备相对独立的编码与调试能力");if((a.languages||[]).length>=2)strengths.push("接触过多种编程语言，具备一定技术迁移基础");if(a.ownership==="independent")strengths.push("能够独立承担模块，适合进一步强化系统设计和工程能力");if(a.projectDepth==="production"||a.projectDepth==="deploy")strengths.push("项目具备上线或独立部署经历，较容易形成可展示的工程实践证据");if(a.projectEvidence==="clear")strengths.push("能够清晰说明个人贡献、技术方案与项目难点");if(a.frameworks&&a.frameworks.filter(x=>x!=="none").length>=3)strengths.push("接触过多类开发框架或工程工具，具备一定技术广度");if(!strengths.length)strengths.push("已经开始梳理自己的技术方向，下一步应通过完整项目形成可展示的能力证据");
+ const gaps=[];if(a.cs!=="good")gaps.push("系统复习数据结构、算法、计算机网络、操作系统和数据库基础");if(a.coding!=="high")gaps.push("围绕目标岗位完成一个从设计、编码、测试到部署的完整项目");if(a.resume==="none"||a.resume==="draft")gaps.push("整理项目经历，写清个人职责、技术方案、难点和可验证结果");if(a.intern==="none")gaps.push("通过实习、开源贡献或真实业务项目补充工程实践证据");if(a.projectEvidence==="weak"||a.projectEvidence==="none")gaps.push("重新梳理项目细节，确保能讲清个人贡献、核心代码、技术选型和问题解决过程");if(a.interview==="basic"||a.interview==="nervous")gaps.push("针对项目深挖和结构化表达进行模拟面试，训练把技术过程讲清楚");if(a.english==="weak")gaps.push("逐步提升英文技术文档阅读能力，优先掌握常见报错、官方文档和 API 说明");if(a.priority==="direction")gaps.push("先选择一个主攻方向，避免同时准备过多岗位导致精力分散");
+ const unique=(arr)=>[...new Set(arr)];
+ let reason=`根据当前回答，你的综合画像更偏向${best.name}。该方向与你选择的兴趣偏好、技术接触情况和项目经历相对契合。建议把它作为优先验证方向，同时保留第二推荐方向作为备选。`;
+ const roadmap=[`围绕「${best.name}」拆解岗位 JD，整理 15–20 个目标岗位的共同技能要求。`,`补齐核心技能：${best.skills.slice(0,2).join("、")}。`,`完成或打磨一个可演示项目，准备架构说明、关键代码、测试结果和项目复盘。`,`完善简历与面试表达，针对目标岗位进行基础知识、项目追问和模拟面试。`];
+ let html=`<div class="result-head"><div><div class="step-kicker">YOUR CAREER REPORT</div><h2>你的测评报告</h2><p>基于问卷回答生成 · 可打印或另存为 PDF</p></div><div class="result-actions"><button class="btn btn-light" onclick="window.print()">打印 / 保存 PDF</button><button class="btn btn-primary" onclick="restart()">重新测评</button></div></div>
+ <div class="result-card"><div class="step-kicker">TOP MATCH</div><h3 style="font-size:24px">${best.name} <span style="color:var(--primary);font-size:17px">${best.score} 分</span></h3><p>${reason}</p><div class="rank-list">`;
+ top.forEach((r,i)=>html+=`<div class="rank"><div class="rank-name">${i+1}. ${r.name}</div><div class="bar"><i style="width:${r.score}%"></i></div><div class="score">${r.score}</div></div>`);
+ html+=`</div><p class="note" style="margin-top:13px">匹配分数用于比较本次测评中的相对适配程度，并非就业成功率、面试通过率或市场竞争力排名。</p></div>`;
+ html+=`<h3 class="section-title">推荐岗位解读</h3><div class="cards">`;
+ top.slice(0,3).forEach((r,i)=>html+=`<div class="role-card"><div class="role-top"><h4>${r.name}</h4><span class="pill">${i===0?"优先探索":i===1?"备选方向":"延伸方向"}</span></div><p>${r.desc}</p><div style="font-size:12px;color:#394158"><b>适配原因：</b>${r.fit}</div><p><b>核心要求：</b>${r.need}</p></div>`);
+ html+=`</div><h3 class="section-title">你的优势与提升重点</h3><div class="columns"><div class="info-box"><h4 style="color:var(--green)">当前优势</h4><ul>${unique(strengths).map(x=>`<li>${x}</li>`).join("")}</ul></div><div class="info-box"><h4 style="color:var(--orange)">建议补齐</h4><ul>${unique(gaps.length?gaps:["继续强化项目深度，补充技术方案、性能分析和工程质量方面的证据"]).map(x=>`<li>${x}</li>`).join("")}</ul></div></div>`;
+ html+=`<h3 class="section-title">优先岗位的技能清单</h3><div class="info-box"><h4>${best.name} · 建议重点准备</h4><ul>${best.skills.map(x=>`<li>${x}</li>`).join("")}</ul></div>`;
+ const prepLabels={strong:"较熟练",medium:"具备基础",basic:"初步了解",none:"尚未接触",good:"较扎实",average:"需要巩固",weak:"相对薄弱",unknown:"尚未系统评估",high:"较好",mid:"中等",low:"需要加强",start:"入门阶段",clear:"能清晰讲解",some:"能说明主要内容",weakEvidence:"讲解深度不足",production:"真实业务上线",deploy:"独立部署可演示",complete:"功能完整并有测试文档",demo:"核心功能演示",tutorial:"教程复现为主",pass:"基础题和项目追问较完整",basicInterview:"项目深挖需加强",nervous:"表达和临场发挥需加强",noexp:"暂无正式面试经验"};
+ const evidenceRows=[ ["数据库能力",prepLabels[a.database]||"未填写"], ["算法训练",prepLabels[a.algorithmLevel]||"未填写"], ["项目讲解",({clear:"能清晰讲解",some:"能说明主要内容",weak:"讲解深度不足",none:"暂无项目讲解经验"})[a.projectEvidence]||"未填写"], ["项目完成度",prepLabels[a.projectDepth]||"未填写"], ["面试状态",({pass:"基础题和项目追问较完整",basic:"项目深挖需加强",nervous:"表达和临场发挥需加强",noexp:"暂无正式面试经验"})[a.interview]||"未填写"], ["英文资料阅读",({good:"较顺畅",medium:"借助工具可阅读",basic:"主要依赖中文资料",weak:"需要加强"})[a.english]||"未填写"] ];
+ html+=`<h3 class="section-title">工程能力与求职准备度</h3><div class="info-box"><ul>${evidenceRows.map(([k,v])=>`<li><b>${k}：</b>${v}</li>`).join("")}</ul></div>`;
+ html+=`<h3 class="section-title">接下来可以这样行动</h3><div class="roadmap">${roadmap.map((x,i)=>`<div class="roadmap-item"><b>${["明确目标岗位","补齐关键技能","打造项目证据","准备简历与面试"][i]}</b><span>${x}</span></div>`).join("")}</div>`;
+ const schoolLabels={985:"国内 985 高校",211:"国内 211 高校（非 985）",first:"国内一本",second:"国内二本",other:"国内其他（专科、高职、民办等）",qs100:"海外 QS 100 名以内",qs300:"海外 QS 101–300 名",qs_other:"海外 QS 300 名以外 / 未上榜"};
+ const backgroundNote=String(a.school||"").startsWith("qs")?"海外院校按 QS 100 名以内、101–300 名、300 名以外 / 未上榜进行简化分档；排名每年更新，且不能直接代表计算机专业实力或个人就业能力。":"国内院校按 985、211、一本、二本、其他进行简化分档；学校层次仅用于教育背景描述，不等于个人技术能力。";
+ html+=`<h3 class="section-title">本次测评画像</h3><div class="info-box"><ul><li>学历：${a.degree||"未填写"}；院校层次：${schoolLabels[a.school]||"未填写"}；毕业届别：${a.grad||"未填写"}</li>${a.schoolName?`<li>学校名称：${escapeHtml(a.schoolName)}</li>`:""}<li>专业方向：${({计算机:"计算机 / 软件工程",数据:"数据科学 / 大数据 / 人工智能",电子:"电子信息 / 通信 / 自动化",其他:"其他专业"})[a.major]||a.major||"未填写"}</li><li>技术语言：${(a.languages||[]).join("、")||"未填写"}</li><li>使用过的框架 / 工具：${(a.frameworks||[]).filter(x=>x!=="none").join("、")||"未填写"}</li><li>项目完成度：${({production:"真实业务上线",deploy:"独立部署可演示",complete:"功能完整并有测试文档",demo:"核心功能 / 课程演示",tutorial:"教程复现为主"})[a.projectDepth]||"未填写"}</li><li>求职偏好：${({internet:"互联网 / 软件 / AI 企业",state:"国企 / 央企 / 事业单位相关岗位",manufacture:"制造业数字化 / 企业 IT",any:"企业类型不限"})[a.company]||"未填写"}</li><li>求职阶段：${({explore:"了解方向",prepare:"准备简历和面试",apply:"已开始投递",interview:"正在笔试 / 面试",offer:"已有 offer，比较选择"})[a.jobStage]||"未填写"}</li><li>地点接受程度：${({wide:"跨省跨城市",region:"周边省市 / 省会",local:"本地及周边",remote:"优先远程 / 灵活办公"})[a.mobility]||"未填写"}</li>${a.extra?`<li>补充说明：${escapeHtml(a.extra)}</li>`:""}</ul><p class="note" style="margin-top:10px">${backgroundNote}</p></div>`;
+ html+=`<div class="disclaimer">测评说明：本报告根据你填写的信息，通过规则模型对岗位方向进行初步匹配，仅供职业探索和求职规划参考。岗位实际要求会因公司、城市、业务和招聘批次而变化；请结合真实招聘信息、个人兴趣和实践反馈综合判断。学校层次和 QS 区间仅用于教育背景描述，不直接等同于个人能力；QS 分档为问卷简化区间，不是 QS 官方等级。测评结果不构成就业、薪资或录用承诺。</div>`;
+ $("report").innerHTML=html;$("quiz").classList.add("hidden");$("hero").classList.add("hidden");$("result").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function restart(){Object.keys(answers).forEach(k=>delete answers[k]);current=0;$("result").classList.add("hidden");$("hero").classList.remove("hidden");$("welcome").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"})}
+</script>
+</body>
+</html>
